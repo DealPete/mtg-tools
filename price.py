@@ -1,10 +1,13 @@
 import pandas as pd
+import requests
 import json
 
-ave = pd.read_csv('average.csv', sep='\t')
+response = requests.get("https://api.scryfall.com/bulk-data/oracle-cards")
+uri = json.loads(response.text)['download_uri']
+response = requests.get(uri)
+cards = json.loads(response.text)
 
-f = open('oracle-cards.json', 'rb')
-cards = json.load(f)
+ave = pd.read_csv('average.csv', sep='\t')
 
 prices = [ {'card': c['name'], 'price': c['prices']['tix']} for c in cards ]
 price = pd.DataFrame.from_dict(prices)

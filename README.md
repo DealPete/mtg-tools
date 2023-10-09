@@ -24,7 +24,7 @@ Syntax:
 
 `python price.py`
 
-Takes `average.csv` and `oracle-cards.json` (from Scryfall) and adds the columns `price` and `value`. The `value` of a card is its `average` divided by its `price`. Outputs `price.csv` sorted by value descending.
+Downloads price list from Scryfall and combines it with `average.csv`, adding the columns `price` and `value`. The `value` of a card is its `average` divided by its `price`. Outputs `price.csv` sorted by value descending.
 
 ## Best MTGA eternal cards
 
