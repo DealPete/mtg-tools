@@ -56,6 +56,15 @@ Takes a deck in csv format produced by the previous command and works out the to
 
 Syntax:
 
-`pyton myprice.py`
+`python myprice.py`
 
 Takes an MTGO collection in a file called `mycards.dek` and `price.csv` and filters out cards you already own. Outputs `myprice.csv`.
+
+
+## Pricing Cedh data
+
+Syntax
+
+`python priceCedh.py`
+
+Takes `export.csv` from [cEDH Decklist Database Staples](https://konradhoeffner.github.io/cedh/staples.html), downloads prices from Scryfall, and creates a sorted list of highest value CEDH cards.
